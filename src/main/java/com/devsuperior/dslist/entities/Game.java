@@ -8,10 +8,12 @@ import java.util.Objects;
 @Entity //vai configurar a classe java para que seja equivalente a uma tabela
 @Table(name = "tb_game")
 public class Game {
+
     @Id //informando que esse dado é o id
     @GeneratedValue(strategy = GenerationType.IDENTITY) //informando que esse valor vai ser criado automaticamente
     private Long id;
     private String title;
+
     @Column(name = "gameYear") //mudando o nome no banco de dados para não dar problema na criação
     private Integer year;
     private String genre;
@@ -19,6 +21,7 @@ public class Game {
     private Double score;
     private String imgUrl;
     private String shortDescription;
+    @Column(length = 1000)
     private String longDescription;
 
     public Game(){
